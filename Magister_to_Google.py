@@ -74,7 +74,7 @@ def read_query(connection, query):
         return result
     except Error as err:
         print(f"Error: '{err}'")
-connection = create_db_connection('localhost',username,password,database)
+connection = create_db_connection(host_name, user_name, user_password, db_name)
 
 #het nieuwe cijfer vergelijken met het oude
 def vergelijkCijfer():
@@ -146,6 +146,19 @@ def resetTabel():
     getLaatsteCijfer = """
     SELECT * FROM Magister.""" + str(id) + """ WHERE idCijfer=1
     """
+
+    maakTabel = """
+    CREATE TABLE `Magister`.`""" + str(id) + """` (
+          `idCijfer` INT NOT NULL,
+          `vak` VARCHAR(50) NOT NULL,
+          `datumInvoer` VARCHAR(10) NOT NULL,
+          `omschrijving` VARCHAR(50) NOT NULL,
+          `resultaat` VARCHAR(10) NOT NULL,
+          `weegfactor` VARCHAR(10) NOT NULL,
+    PRIMARY KEY (`idCijfer`));
+    """
+
+    execute_query(connection,maakTabel)
 
     global laatsteCijfer
     laatsteCijfer = read_query(connection, getLaatsteCijfer)
