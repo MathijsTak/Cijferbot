@@ -116,4 +116,4 @@ async def start(ctx):
 
 
 
-client.run("ODU0MDQ3NDAyNDU2Nzc2NzA0.YMePoA.UxORDl2LI_tZwM0AqN2pG1KmRPE")
+client.run("")
