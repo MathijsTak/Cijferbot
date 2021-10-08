@@ -51,10 +51,10 @@ async def DM(ctx):
 
 @client.command(pass_context=True)
 async def start(ctx):
-    host_name = '85.145.194.112'
-    user_name = 'groep4'
-    user_password = 'Corderiusgroep4'
-    db_name = 'Magister'
+    host_name = 'host_name'
+    user_name = 'user_name'
+    user_password = 'user_password'
+    db_name = 'db_name'
     connection = create_db_connection(host_name, user_name, user_password, db_name)
 
     laatsteCijfer = []
