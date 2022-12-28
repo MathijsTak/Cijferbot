@@ -13,8 +13,8 @@ def smtpServer():
     tls_code, tls_boodschap = server.starttls()
     print(tls_code)
     global sender
-    sender = 'nieuwcijfer@gmail.com'
-    passwd = 'Corderiusgroep4'
+    sender = '' #email
+    passwd = '' #wachtwoord
     login_code, login_boodschap = server.login(sender, passwd)
     print(login_code)
     print(login_boodschap)
@@ -49,8 +49,8 @@ def read_query(connection, query):
         return result
     except Error as err:
         print(f"Error: '{err}'")
-connection = create_db_connection('85.145.194.112', 'groep4', 'Corderiusgroep4', 'Magister')
-id = 141507
+connection = create_db_connection('', '', '', '')
+id = 000000
 
 getLaatsteCijfer = """
 SELECT * FROM view""" + str(id) + """ WHERE idCijfer=1
@@ -81,7 +81,7 @@ except:
 	print('Geen cijfer')
 
 smtpServer()
-to = 'mathijs.tak@outlook.com'
+to = ''
 aan = 'To:' + to
 subject = 'Subject: Nieuw cijfer'
 text = 'Nieuw cijfer: \n'
